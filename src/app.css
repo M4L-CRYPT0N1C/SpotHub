@@ -1,0 +1,45 @@
+@import '@nativescript/theme/css/core.css';
+@import '@nativescript/theme/css/default.css';
+
+.fas {
+  font-family: "Font Awesome 5 Free", "fa-solid-900";
+  font-weight: 900;
+}
+
+.bottom-nav {
+  background-color: #282828;
+  color: #b3b3b3;
+}
+
+.bottom-nav Label {
+  font-size: 24;
+  text-align: center;
+}
+
+ActionBar {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.action-item {
+  color: #ffffff;
+  font-size: 20;
+}
+
+.h2 {
+  font-size: 24;
+  font-weight: bold;
+  margin-bottom: 10;
+}
+
+.list-group-item {
+  border-bottom-width: 1;
+  border-color: #282828;
+}
+
+.btn-primary {
+  background-color: #1DB954;
+  color: #ffffff;
+}
+
+/* Add more custom styles as needed */

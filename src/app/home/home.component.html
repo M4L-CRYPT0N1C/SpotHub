@@ -1,0 +1,49 @@
+<ActionBar title="Home" class="action-bar">
+  <NavigationButton visibility="collapsed"></NavigationButton>
+  <ActionItem ios.position="right" android.position="actionBar">
+    <Label text="&#xf142;" class="fas action-item"></Label>
+  </ActionItem>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout class="p-4">
+    <Label text="Recently Played" class="h2 mb-2"></Label>
+    <ListView [items]="recentlyPlayed" class="mb-4">
+      <ng-template let-item="item">
+        <GridLayout columns="auto, *" class="list-group-item">
+          <Image [src]="item.imageUrl" width="50" height="50" class="rounded-lg"></Image>
+          <StackLayout col="1" class="ml-2">
+            <Label [text]="item.title" class="font-bold"></Label>
+            <Label [text]="item.artist" class="text-muted"></Label>
+          </StackLayout>
+        </GridLayout>
+      </ng-template>
+    </ListView>
+
+    <Label text="Your Top Mixes" class="h2 mb-2"></Label>
+    <ListView [items]="topMixes" class="mb-4">
+      <ng-template let-item="item">
+        <GridLayout columns="auto, *" class="list-group-item">
+          <Image [src]="item.imageUrl" width="50" height="50" class="rounded-lg"></Image>
+          <StackLayout col="1" class="ml-2">
+            <Label [text]="item.title" class="font-bold"></Label>
+            <Label [text]="item.description" class="text-muted"></Label>
+          </StackLayout>
+        </GridLayout>
+      </ng-template>
+    </ListView>
+
+    <Label text="Made for You" class="h2 mb-2"></Label>
+    <ListView [items]="personalizedPlaylists">
+      <ng-template let-item="item">
+        <GridLayout columns="auto, *" class="list-group-item">
+          <Image [src]="item.imageUrl" width="50" height="50" class="rounded-lg"></Image>
+          <StackLayout col="1" class="ml-2">
+            <Label [text]="item.title" class="font-bold"></Label>
+            <Label [text]="item.description" class="text-muted"></Label>
+          </StackLayout>
+        </GridLayout>
+      </ng-template>
+    </ListView>
+  </StackLayout>
+</ScrollView>

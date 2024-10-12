@@ -1,0 +1,18 @@
+<ActionBar title="Favorites" class="action-bar">
+  <NavigationButton visibility="collapsed"></NavigationButton>
+</ActionBar>
+
+<GridLayout>
+  <ListView [items]="favorites" class="list-group">
+    <ng-template let-item="item">
+      <GridLayout columns="auto, *, auto" class="list-group-item">
+        <Image [src]="item.imageUrl" width="50" height="50" class="rounded-lg"></Image>
+        <StackLayout col="1" class="ml-2">
+          <Label [text]="item.title" class="font-bold"></Label>
+          <Label [text]="item.artist" class="text-muted"></Label>
+        </StackLayout>
+        <Label col="2" text="&#xf004;" class="fas text-red-500" (tap)="removeFromFavorites(item)"></Label>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>

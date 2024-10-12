@@ -1,0 +1,11 @@
+<GridLayout rows="*, auto">
+  <page-router-outlet row="0"></page-router-outlet>
+  <StackLayout row="1" class="bottom-nav">
+    <GridLayout columns="*, *, *, *" class="p-2">
+      <Label col="0" text="&#xf015;" class="fas" (tap)="onNavItemTap('/home')"></Label>
+      <Label col="1" text="&#xf002;" class="fas" (tap)="onNavItemTap('/search')"></Label>
+      <Label col="2" text="&#xf004;" class="fas" (tap)="onNavItemTap('/favorites')"></Label>
+      <Label col="3" text="&#xf013;" class="fas" (tap)="onNavItemTap('/settings')"></Label>
+    </GridLayout>
+  </StackLayout>
+</GridLayout>

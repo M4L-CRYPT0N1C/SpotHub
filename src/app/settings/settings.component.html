@@ -1,0 +1,22 @@
+<ActionBar title="Settings" class="action-bar">
+  <NavigationButton visibility="collapsed"></NavigationButton>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout class="p-4">
+    <Label text="Theme" class="h2 mb-2"></Label>
+    <ListPicker [items]="themes" [(ngModel)]="selectedTheme" (selectedIndexChange)="onThemeChange()" class="mb-4"></ListPicker>
+
+    <Label text="Accent Color" class="h2 mb-2"></Label>
+    <GridLayout rows="auto" columns="*, *, *, *" class="mb-4">
+      <Label *ngFor="let color of accentColors; let i = index" [col]="i" [backgroundColor]="color" class="w-12 h-12 rounded-full" (tap)="onAccentColorChange(color)"></Label>
+    </GridLayout>
+
+    <Label text="Playback Quality" class="h2 mb-2"></Label>
+    <ListPicker [items]="playbackQualities" [(ngModel)]="selectedPlaybackQuality" (selectedIndexChange)="onPlaybackQualityChange()" class="mb-4"></ListPicker>
+
+    <Button text="Clear Cache" (tap)="clearCache()" class="btn btn-primary mb-4"></Button>
+
+    <Label [text]="'App Version: ' + appVersion" class="text-center text-muted"></Label>
+  </StackLayout>
+</ScrollView>

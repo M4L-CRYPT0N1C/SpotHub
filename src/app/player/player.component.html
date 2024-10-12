@@ -1,0 +1,27 @@
+<ActionBar title="Now Playing" class="action-bar">
+  <NavigationButton text="Back" android.systemIcon="ic_menu_back"></NavigationButton>
+</ActionBar>
+
+<StackLayout class="p-4">
+  <Image [src]="currentTrack.imageUrl" class="w-full h-64 rounded-lg mb-4"></Image>
+  <Label [text]="currentTrack.title" class="h2 text-center mb-2"></Label>
+  <Label [text]="currentTrack.artist" class="text-center text-muted mb-4"></Label>
+
+  <GridLayout rows="auto, auto" columns="*, *, *" class="mb-4">
+    <Label col="0" text="&#xf048;" class="fas text-3xl text-center" (tap)="previousTrack()"></Label>
+    <Label col="1" [text]="isPlaying ? '&#xf04c;' : '&#xf04b;'" class="fas text-4xl text-center" (tap)="togglePlayPause()"></Label>
+    <Label col="2" text="&#xf051;" class="fas text-3xl text-center" (tap)="nextTrack()"></Label>
+    
+    <Slider row="1" colSpan="3" [value]="currentTime" [maxValue]="duration" (valueChange)="onSliderValueChange($event)" class="mt-4"></Slider>
+  </GridLayout>
+
+  <GridLayout columns="auto, *, auto" class="mb-4">
+    <Label col="0" [text]="formatTime(currentTime)"></Label>
+    <Label col="2" [text]="formatTime(duration)"></Label>
+  </GridLayout>
+
+  <GridLayout columns="auto, *">
+    <Label text="&#xf004;" class="fas text-2xl" [class.text-red-500]="isFavorite" (tap)="toggleFavorite()"></Label>
+    <Label col="1" text="Lyrics" class="text-right" (tap)="showLyrics()"></Label>
+  </GridLayout>
+</StackLayout>

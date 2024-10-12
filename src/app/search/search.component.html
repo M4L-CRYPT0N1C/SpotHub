@@ -1,0 +1,18 @@
+<ActionBar title="Search" class="action-bar">
+  <NavigationButton visibility="collapsed"></NavigationButton>
+</ActionBar>
+
+<StackLayout class="p-4">
+  <SearchBar hint="Search for songs, artists, or albums" (submit)="onSearch($event)" class="mb-4"></SearchBar>
+  <ListView [items]="searchResults" class="list-group">
+    <ng-template let-item="item">
+      <GridLayout columns="auto, *" class="list-group-item">
+        <Image [src]="item.imageUrl" width="50" height="50" class="rounded-lg"></Image>
+        <StackLayout col="1" class="ml-2">
+          <Label [text]="item.title" class="font-bold"></Label>
+          <Label [text]="item.artist" class="text-muted"></Label>
+        </StackLayout>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+</StackLayout>
